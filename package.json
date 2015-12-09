@@ -1,7 +1,11 @@
 {
   "name": "angularBestPractices",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.13.3",
+    "lodash": "^3.10.1",
+    "mongoose": "^4.2.10"
+  },
   "scripts": {
     "test": "gulp test"
   },
