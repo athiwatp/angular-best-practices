@@ -17,7 +17,7 @@
       .state('translations', {
         url: '/translations?locale',
         templateUrl: 'app/i18n/translations.html',
-        controller: 'TranslationCtrl as vm',
+        controller: 'TranslationController as vm',
         resolve: {
           language: onTranslationsEnter
         }

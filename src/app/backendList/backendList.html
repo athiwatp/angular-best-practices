@@ -1,0 +1,26 @@
+<div class="backend-list">
+  <h1>Backend List</h1>
+  <div>
+    <table cellpadding="20">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Info</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="thing in vm.thingsList">
+        <td ng-bind="thing.name"></td>
+        <td ng-bind="thing.info"></td>
+        <td><button class="btn btn-danger" ng-click="vm.removeThing(thing._id)">remove</button></td>
+      </tr>
+      <tr>
+        <td><input type="text" ng-model="vm.newItem.name" placeholder="enter name" /></td>
+        <td><input type="text" ng-model="vm.newItem.info" placeholder="enter info" /></td>
+        <td><button class="btn btn-success" ng-click="vm.addThing()">add</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

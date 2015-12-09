@@ -5,11 +5,11 @@
 'use strict';
 
 //var errors = require('./components/errors');
-var config = require('./config');
+var config = require('./config/environment');
 
 module.exports = function(app) {
 
   // Insert routes below
-  app.use(config.routePrefix + '/things', require('./api/things'));
+  app.use(config.routePrefix + '/things', require('./api/thing'));
 
 };

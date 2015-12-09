@@ -15,7 +15,8 @@
       'angularBestPractices.home',
       'angularBestPractices.about',
       'angularBestPractices.contact',
-      'angularBestPractices.i18n'
+      'angularBestPractices.i18n',
+      'angularBestPractices.backendList'
     ])
     .config(routerConfig)
     .run(runBlock);

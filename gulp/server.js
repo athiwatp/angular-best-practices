@@ -2,6 +2,8 @@
 
 var path = require('path');
 var gulp = require('gulp');
+var url = require('url');
+var proxy = require('proxy-middleware');
 var conf = require('./conf');
 
 var browserSync = require('browser-sync');
@@ -21,9 +23,13 @@ function browserSyncInit(baseDir, browser) {
     };
   }
 
+  var proxyOptions = url.parse('http://localhost:9000/api');
+  proxyOptions.route = '/api';
+
   var server = {
     baseDir: baseDir,
-    routes: routes
+    routes: routes,
+    middleware: [proxy(proxyOptions)]
   };
 
   /*
@@ -46,7 +52,7 @@ browserSync.use(browserSyncSpa({
   selector: '[ng-app]'// Only needed for angular apps
 }));
 
-gulp.task('serve', ['watch'], function () {
+gulp.task('serve', ['watch', 'start-backend'], function () {
   browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
 });
 

@@ -6,7 +6,7 @@
   'use strict';
 
   angular.module('angularBestPractices.i18n')
-    .controller('TranslationCtrl', TranslationCtrl);
+    .controller('TranslationController', TranslationCtrl);
 
   /** @ngInject */
   function TranslationCtrl($scope, $translate) {
