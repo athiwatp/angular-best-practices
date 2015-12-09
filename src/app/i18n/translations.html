@@ -1,0 +1,46 @@
+<div>
+  <h1>Translations page</h1>
+  <div>
+    <ul>
+      <li><a ui-sref=".({ locale: 'en_US' })">English</a></li>
+      <li><a ui-sref=".({ locale: 'de_DE' })">German</a></li>
+    </ul>
+  </div>
+  <div translate="SIMPLE_TRANSLATION"></div>
+  <div translate="TRANSLATION_WITH_ARGUMENT" translate-values="{ value: vm.someValue }"></div>
+  <div>{{ 'TRANSLATE_USING_FILTER' | translate }}</div>
+  <div>{{::("TRANSLATE_USING_FILTER_ONE_WAY_BINDING" | translate)}}</div>
+  <div>{{:: vm.controllerBoundTranslation }}</div>
+
+  <h2>Pluralization</h2>
+  <div ng-init="howManyYears = 1">
+    <div
+      translate="PLURALIZED_MESSAGE"
+      translate-values="{ COUNT: howManyYears }"
+      translate-interpolation="messageformat"></div>
+    <label>Change value to 2 to see difference</label><input type="text" ng-model="howManyYears" />
+  </div>
+
+  <h2>Gender</h2>
+  <div ng-init="whatGender = 'MALE'">
+    <div
+      translate="GENDERIFIED_MESSAGE"
+      translate-values="{ GENDER: whatGender }"
+      translate-interpolation="messageformat"></div>
+    <label>Change gender</label>
+    <select ng-model="whatGender">
+      <option value="MALE">Male</option>
+      <option value="FEMALE">Female</option>
+      <option value="TWENTY_FIRST">21st century</option>
+    </select>
+  </div>
+
+  <h2>Currency</h2>
+  <div>
+    <div>{{::('COST_MESSAGE' | translate )}}: {{ (vm.price / vm.currencyOptions[vm.activeCurrency].conversionRate ) | currency : vm.currencyOptions[vm.activeCurrency].sign }}</div>
+    <label>Change currency</label>
+    <select ng-model="vm.activeCurrency">
+      <option ng-repeat="curr in vm.availableCurrencies" value="{{curr}}">{{curr}}</option>
+    </select>
+  </div>
+</div>

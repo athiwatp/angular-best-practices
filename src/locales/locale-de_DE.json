@@ -1,0 +1,10 @@
+{
+    "TRANSLATE_USING_FILTER": "Lol",
+    "COST_MESSAGE": "Preis",
+    "TRANSLATE_USING_FILTER_ONE_WAY_BINDING": "Das ist in Deutsch geschrieben",
+    "SIMPLE_TRANSLATION": "Hallo, ich bin Tiefer Gedanke Superkomputer.",
+    "TRANSLATION_WITH_ARGUMENT": "{{value}} ist die Antwort auf das Leben, das Universum und alles.",
+    "PLURALIZED_MESSAGE": "I bin seit {COUNT} {COUNT, select, 1{jahr} other{jahren}} geboren.",
+    "GENDERIFIED_MESSAGE": "{GENDER, select, MALE{Er} FEMALE{Sie} other{21 Jahrhundert}} sieht gut aus.",
+    "CONTROLLER_BOUND_TRANSLATION": "Dieser Wert wird durch die Kontroller gebunden"
+}
