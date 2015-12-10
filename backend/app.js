@@ -11,9 +11,6 @@ var express = require('express');
 var mongoose = require('mongoose');
 var config = require('./config/environment');
 
-var compression = require('compression');
-var bodyParser = require('body-parser');
-
 // Connect to database
 mongoose.connect(config.mongo.uri, config.mongo.options);
 
@@ -23,9 +20,7 @@ if(config.seedDB) { require('./config/seed'); }
 var app = express();
 var server = require('http').createServer(app);
 
-app.use(compression());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+require('./config/express')(app);
 require('./routes')(app);
 
 // Start server
