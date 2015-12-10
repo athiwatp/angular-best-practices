@@ -9,21 +9,21 @@
     .service('things', things);
 
   /** @ngInject */
-  function things($http) {
+  function things($http, appConfig) {
 
-    var API_ROOT = '/api/things';
+    var THING_ROOT = appConfig.api.root + '/things';
 
     this.list = function() {
-      return $http.get(API_ROOT)
+      return $http.get(THING_ROOT)
         .then(function(res) { return res.data; });
     };
 
     this.remove = function(id) {
-      return $http.delete(API_ROOT + '/' + id);
+      return $http.delete(THING_ROOT + '/' + id);
     };
 
     this.add = function(newThing) {
-      return $http.post(API_ROOT, newThing);
+      return $http.post(THING_ROOT, newThing);
     };
 
   }
